@@ -1,9 +1,7 @@
-# Dockerfile
 FROM openjdk:17-jdk-slim
 VOLUME /tmp
 WORKDIR /app
 
-COPY .mvn/ .mvn
 COPY mvnw .
 COPY pom.xml .
 COPY src/ src/
