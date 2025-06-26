@@ -17,7 +17,13 @@ public class WebConfig {
     @Order(Ordered.HIGHEST_PRECEDENCE)
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:5173"));  // React frontend
+
+        config.setAllowedOrigins(List.of(
+                "http://localhost:5173",                  // Dev frontend
+                "https://PulseTrackDev.github.io/PulseTrackFrontend",     // GitHub Pages
+                "https://pulsetrack.io"       // (Optional) Custom domain
+        ));
+
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
